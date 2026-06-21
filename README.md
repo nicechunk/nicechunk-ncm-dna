@@ -30,6 +30,14 @@ NCM and NCM DNA solve related but different problems. NCM stores explicit cuboid
 
 That separation matters for future asset design. Some assets should be stored exactly as NCM because the authored geometry is the asset. Other assets may be better represented as compact deterministic genes if a short recipe can reproduce the target. The lab exists to test where that boundary is, not to assume one representation will replace the other.
 
+### Gene Encoding Layout
+
+![NCM DNA gene encoding layout](docs/diagrams/gene-encoding-layout.svg)
+
+The gene format is deliberately bounded. Species, body dimensions, material set, ornament seed, and flags are packed into a base62 payload after normalization. That means a mutation or search step can change a field without leaving the valid model space, and the same encoded value can be replayed into the same cuboid output.
+
+The important engineering question is not whether the code looks small. It is whether the code is specific enough to reproduce useful geometry and constrained enough to search. This diagram documents that boundary: readable parameters become a packed gene, the packed gene becomes deterministic growth, and canonical cuboids remain the comparison layer.
+
 ## System Principles
 
 - CPU-friendly search: the gene language uses branching, templates, symmetry, and canonical sorting that fit general CPU execution.
