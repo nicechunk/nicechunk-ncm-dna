@@ -12,6 +12,24 @@ The project is research-oriented. It tests whether compact procedural genes can 
 
 It is separated from the NCM converter because it has a different purpose: NCM encodes assets, while NCM DNA searches for compact deterministic descriptions of assets.
 
+## Architecture Diagrams
+
+### Search Loop
+
+![NCM DNA search loop](docs/diagrams/ncm-dna-search-loop.svg)
+
+NCM DNA is built around a search loop. The lab starts with a target model, then generates candidate genes. Worker threads grow each gene into a cuboid model, canonicalize the result, score it against the target, and keep the best candidate. The loop continues until it finds an exact match or the search budget is exhausted.
+
+The important detail is that the target is not treated as a picture. It is treated as canonical geometry. That lets the lab compare shape, structure, and cuboid arrangement in a deterministic way. The same gene should always grow into the same model, so a successful gene becomes a replayable recipe rather than a static asset dump.
+
+### Relationship To NCM
+
+![Relationship between NCM and NCM DNA](docs/diagrams/ncm-dna-relationship.svg)
+
+NCM and NCM DNA solve related but different problems. NCM stores explicit cuboid geometry. NCM DNA stores a procedural recipe that can grow into cuboid geometry. Both paths converge on canonical cuboids, which is the shared comparison and rendering layer.
+
+That separation matters for future asset design. Some assets should be stored exactly as NCM because the authored geometry is the asset. Other assets may be better represented as compact deterministic genes if a short recipe can reproduce the target. The lab exists to test where that boundary is, not to assume one representation will replace the other.
+
 ## System Principles
 
 - CPU-friendly search: the gene language uses branching, templates, symmetry, and canonical sorting that fit general CPU execution.

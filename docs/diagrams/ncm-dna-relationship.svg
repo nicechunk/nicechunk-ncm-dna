@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Relationship between NCM and NCM DNA</title>
+  <desc id="desc">A diagram comparing NCM as explicit cuboid storage with NCM DNA as procedural gene storage that grows comparable cuboid models.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#080d13"/>
+      <stop offset="1" stop-color="#17130c"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#8fdcff"/>
+    </marker>
+    <style>
+      .label { font: 800 12px Inter, ui-sans-serif, system-ui, sans-serif; fill: #90ff1a; letter-spacing: .16em; }
+      .title { font: 850 44px Inter, ui-sans-serif, system-ui, sans-serif; fill: #f3f8ff; }
+      .copy { font: 500 17px Inter, ui-sans-serif, system-ui, sans-serif; fill: #b8c7d4; }
+      .card { fill: rgba(255,255,255,.06); stroke: rgba(255,255,255,.16); stroke-width: 1.2; rx: 20; }
+      .head { font: 850 28px Inter, ui-sans-serif, system-ui, sans-serif; fill: #f3f8ff; }
+      .sub { font: 600 14px Inter, ui-sans-serif, system-ui, sans-serif; fill: #b8c7d4; }
+      .mono { font: 750 15px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #f7d98f; }
+      .line { stroke: #8fdcff; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <circle cx="210" cy="580" r="280" fill="#00c2ff" opacity=".07"/>
+  <circle cx="1080" cy="110" r="270" fill="#83ff00" opacity=".07"/>
+
+  <text x="70" y="78" class="label">FORMAT VS PROCEDURE</text>
+  <text x="70" y="132" class="title">NCM stores geometry. DNA stores recipes.</text>
+  <text x="70" y="168" class="copy">Both paths converge on canonical cuboids so tools can compare, render, and reason about the same shape.</text>
+
+  <g transform="translate(76 244)">
+    <rect class="card" width="452" height="324"/>
+    <text x="32" y="56" class="head">NCM</text>
+    <text x="32" y="91" class="sub">Explicit asset record</text>
+    <rect x="32" y="124" width="388" height="56" rx="12" fill="#101a26" stroke="#2e5063"/>
+    <text x="54" y="160" class="mono">NCM2: palette + box stream</text>
+    <text x="32" y="220" class="sub">Best when the exact geometry is the asset.</text>
+    <text x="32" y="250" class="sub">Easy to decode, inspect, render, and verify.</text>
+    <text x="32" y="280" class="sub">Size depends on box count after merging.</text>
+  </g>
+
+  <g transform="translate(752 244)">
+    <rect class="card" width="452" height="324"/>
+    <text x="32" y="56" class="head">NCM DNA</text>
+    <text x="32" y="91" class="sub">Procedural gene record</text>
+    <rect x="32" y="124" width="388" height="56" rx="12" fill="#141d11" stroke="#5d7f30"/>
+    <text x="54" y="160" class="mono">gene: seed + growth operators</text>
+    <text x="32" y="220" class="sub">Best when a compact deterministic recipe exists.</text>
+    <text x="32" y="250" class="sub">Can be searched, mutated, scored, and replayed.</text>
+    <text x="32" y="280" class="sub">Size depends on grammar and discovered gene length.</text>
+  </g>
+
+  <g transform="translate(520 330)">
+    <rect class="card" width="240" height="150"/>
+    <text x="42" y="48" class="head" font-size="22">Canonical</text>
+    <text x="60" y="80" class="head" font-size="22">cuboids</text>
+    <text x="36" y="116" class="sub">shared comparison layer</text>
+  </g>
+
+  <path class="line" d="M496 406 H542"/>
+  <path class="line" d="M784 406 H738"/>
+  <path class="line" d="M302 568 C384 644 880 644 978 568"/>
+  <text x="360" y="654" class="copy">Exact assets and procedural assets meet at the same canonical cuboid layer.</text>
+</svg>

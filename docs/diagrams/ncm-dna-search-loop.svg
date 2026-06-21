@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">NCM DNA search loop</title>
+  <desc id="desc">A loop diagram showing target model selection, gene generation, worker search, cuboid growth, canonical comparison, scoring, and best candidate output.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070c13"/>
+      <stop offset="1" stop-color="#15120b"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#8fdcff"/>
+    </marker>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      .label { font: 800 12px Inter, ui-sans-serif, system-ui, sans-serif; fill: #90ff1a; letter-spacing: .16em; }
+      .title { font: 850 44px Inter, ui-sans-serif, system-ui, sans-serif; fill: #f3f8ff; }
+      .copy { font: 500 17px Inter, ui-sans-serif, system-ui, sans-serif; fill: #b8c7d4; }
+      .card { fill: rgba(255,255,255,.06); stroke: rgba(255,255,255,.16); stroke-width: 1.2; rx: 20; }
+      .node-title { font: 800 18px Inter, ui-sans-serif, system-ui, sans-serif; fill: #f3f8ff; }
+      .node-copy { font: 500 13px Inter, ui-sans-serif, system-ui, sans-serif; fill: #b8c7d4; }
+      .num { font: 800 12px Inter, ui-sans-serif, system-ui, sans-serif; fill: #8fdcff; }
+      .line { stroke: #8fdcff; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .loop { stroke: rgba(143,220,255,.32); stroke-width: 18; fill: none; }
+    </style>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <circle cx="640" cy="388" r="238" class="loop"/>
+  <circle cx="250" cy="130" r="250" fill="#00c2ff" opacity=".07"/>
+  <circle cx="1030" cy="600" r="280" fill="#83ff00" opacity=".07"/>
+
+  <text x="70" y="78" class="label">NCM DNA LAB</text>
+  <text x="70" y="132" class="title">Search loop for compact cuboid genes.</text>
+  <text x="70" y="168" class="copy">Workers grow deterministic candidates, canonicalize the output, and score distance to a target model.</text>
+
+  <g transform="translate(504 244)">
+    <rect class="card" width="272" height="122"/>
+    <text x="24" y="34" class="num">01</text>
+    <text x="24" y="64" class="node-title">Target model</text>
+    <text x="24" y="92" class="node-copy">NCM asset, random cuboids,</text>
+    <text x="24" y="112" class="node-copy">or hidden gene output.</text>
+  </g>
+
+  <g transform="translate(812 314)">
+    <rect class="card" width="272" height="122"/>
+    <text x="24" y="34" class="num">02</text>
+    <text x="24" y="64" class="node-title">Gene candidates</text>
+    <text x="24" y="92" class="node-copy">Seed strings, random genes, or exact parameter guesses.</text>
+  </g>
+
+  <g transform="translate(706 500)">
+    <rect class="card" width="286" height="122"/>
+    <text x="24" y="34" class="num">03</text>
+    <text x="24" y="64" class="node-title">Worker growth</text>
+    <text x="24" y="92" class="node-copy">CPU workers expand branches, symmetry, and templates.</text>
+  </g>
+
+  <g transform="translate(288 500)">
+    <rect class="card" width="286" height="122"/>
+    <text x="24" y="34" class="num">04</text>
+    <text x="24" y="64" class="node-title">Canonical cuboids</text>
+    <text x="24" y="92" class="node-copy">Sort, normalize, hash, and compare stable geometry.</text>
+  </g>
+
+  <g transform="translate(196 314)">
+    <rect class="card" width="272" height="122"/>
+    <text x="24" y="34" class="num">05</text>
+    <text x="24" y="64" class="node-title">Score and rank</text>
+    <text x="24" y="92" class="node-copy">Measure difference, keep best, stop on exact match.</text>
+  </g>
+
+  <g transform="translate(504 374)">
+    <circle cx="136" cy="86" r="86" fill="#0b131c" stroke="#83ff00" stroke-width="3" filter="url(#glow)"/>
+    <text x="74" y="74" class="node-title">Best gene</text>
+    <text x="62" y="104" class="node-copy">short, replayable, deterministic</text>
+  </g>
+
+  <path class="line" d="M776 302 C830 300 854 306 886 324"/>
+  <path class="line" d="M948 436 C958 470 936 496 906 512"/>
+  <path class="line" d="M706 562 H594"/>
+  <path class="line" d="M366 500 C316 470 286 444 276 436"/>
+  <path class="line" d="M468 328 C500 308 528 300 548 300"/>
+  <path class="line" d="M468 388 C510 414 540 438 558 460"/>
+  <path class="line" d="M812 378 C742 404 700 430 676 460"/>
+
+  <g transform="translate(64 612)">
+    <rect class="card" width="1152" height="62"/>
+    <text x="26" y="38" class="copy">The lab is not trying to store a picture. It is trying to find a deterministic recipe that can regenerate the same canonical cuboid model.</text>
+  </g>
+</svg>
