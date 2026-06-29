@@ -4,6 +4,12 @@
 
 Deterministic cuboid gene search lab for NCM-like models.
 
+## Official Links
+
+GitHub: [https://github.com/nicechunk/nicechunk-ncm-dna](https://github.com/nicechunk/nicechunk-ncm-dna)
+
+Website: [https://nicechunk.com/ncm_dna/](https://nicechunk.com/ncm_dna/)
+
 ## Project Overview
 
 This repository contains the NCM DNA Lab. It explores deterministic gene strings that can grow into canonical cuboid models, with worker-based search and comparison views.
